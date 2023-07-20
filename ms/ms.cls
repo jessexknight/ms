@@ -32,6 +32,7 @@
 \newcommand{\metabreak}{\g@addto@macro{\meta@block}{\clearpage}}
 % maketitle
 \renewcommand{\maketitle}{%
+  \clearpage%
   \thispagestyle{empty}%
   \meta@block
   \clearpage}
@@ -49,6 +50,12 @@
   \counterwithin{figure}{section}
   \counterwithin{equation}{section}
   \clearpage}
+% cover
+\newcommand{\address}[3][Submission of a manuscript to \emph{\@journal}]{%
+  \@date\medskip\par
+  \parbox[t]{.5\linewidth}{\raggedright#2}%
+  \parbox[t]{.5\linewidth}{\raggedleft#3}\bigskip\par
+  \textbf{Re: #1}\medskip\par}
 % bib
 \RequirePackage[
   natbib=true,
