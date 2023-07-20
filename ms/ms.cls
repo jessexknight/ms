@@ -17,7 +17,7 @@
 \RequirePackage{authblk}
 \def\meta@block{}
 \newcommand{\meta@part}[2]{%
-  \hspace{\metalabel}\llap{\textbf{#1:}}\hspace{1em}%
+  \hspace{\metalabel}\llap{\textbf{#1}}\hspace{1em}%
   \parbox[t]{\dimexpr\linewidth-\metalabel-1em}{#2}\par\medskip}
 \newcommand{\metafield}[3][]{%
   \g@addto@macro{\meta@block}{%
@@ -35,7 +35,19 @@
   \thispagestyle{empty}%
   \meta@block
   \clearpage}
-% TODO: appendix
+% appendix
+\let\xappendix\appendix
+\renewcommand{\appendix}{%
+  \clearpage\thispagestyle{empty}%
+  \meta@part{}{\textbf{\appendixname}}
+  \meta@part{Title}{\@title}
+  \meta@part{Authors}{\@author}\medskip
+  \meta@part{Date}{\@date}
+  \xappendix
+  \counterwithin{table}{section}
+  \counterwithin{figure}{section}
+  \counterwithin{equation}{section}
+  \clearpage}
 % TODO: biblatex
 % helpers
 \renewcommand{\paragraph}[1]{\par\textbf{#1}\hskip.5em}
