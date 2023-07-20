@@ -44,11 +44,19 @@
   \meta@part{Authors}{\@author}\medskip
   \meta@part{Date}{\@date}
   \xappendix
+  \refsection
   \counterwithin{table}{section}
   \counterwithin{figure}{section}
   \counterwithin{equation}{section}
   \clearpage}
-% TODO: biblatex
+\RequirePackage[
+  natbib=true,
+  style=numeric,
+  sorting=none,
+  url=true,
+  doi=false,
+  isbn=false,
+]{biblatex}
 % helpers
 \renewcommand{\paragraph}[1]{\par\textbf{#1}\hskip.5em}
 \newcommand{\ifempty}[3]{\if\relax\detokenize{#1}\relax#2\else#3\fi}

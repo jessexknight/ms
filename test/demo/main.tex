@@ -1,13 +1,18 @@
 \documentclass{ms}
 \input{meta}
 \usepackage{lipsum}
+\addbibresource{main.bib}
 \begin{document}
   \maketitle
   \section{Introduction}
   hello world
   \section{Methods}
+  as shown in \cite{Last2001}:
   \begin{equation} \theta = \beta X \end{equation}
+  \printbibliography
   \appendix
   \section{Supplementary Methods}
-  \begin{equation} \theta = \beta X \end{equation}
+  as shown in \cite{Last2002}:
+  \begin{equation} \theta_i = \beta X_i \end{equation}
+  \printbibliography
 \end{document}
