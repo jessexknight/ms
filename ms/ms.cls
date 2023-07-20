@@ -49,6 +49,7 @@
   \counterwithin{figure}{section}
   \counterwithin{equation}{section}
   \clearpage}
+% bib
 \RequirePackage[
   natbib=true,
   style=numeric,
