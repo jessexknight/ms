@@ -32,14 +32,13 @@
 \newcommand{\metabreak}{\g@addto@macro{\meta@block}{\clearpage}}
 % maketitle
 \renewcommand{\maketitle}{%
-  \clearpage%
-  \thispagestyle{empty}%
+  \clearpage\setcounter{page}{1}%
   \meta@block
   \clearpage}
 % appendix
 \let\xappendix\appendix
 \renewcommand{\appendix}{%
-  \clearpage\thispagestyle{empty}%
+  \clearpage\setcounter{page}{1}%
   \meta@part{}{\textbf{\appendixname}}
   \meta@part{Title}{\@title}
   \meta@part{Authors}{\@author}\medskip
@@ -52,6 +51,7 @@
   \clearpage}
 % cover
 \newcommand{\address}[3][Submission of a manuscript to \emph{\@journal}]{%
+  \thispagestyle{empty}%
   \@date\medskip\par
   \parbox[t]{.5\linewidth}{\raggedright#2}%
   \parbox[t]{.5\linewidth}{\raggedleft#3}\bigskip\par
