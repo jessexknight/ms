@@ -4,6 +4,7 @@
 % options
 \RequirePackage{kvoptions}
 \SetupKeyvalOptions{family=ms,prefix=ms@}
+\DeclareStringOption[numeric-comp]{bibstyle}
 \DeclareBoolOption[false]{blind}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ExecuteOptions{}
@@ -67,11 +68,12 @@
 % bib
 \RequirePackage[
   natbib=true,
-  style=numeric,
+  style=\ms@bibstyle,
   sorting=none,
   url=true,
   doi=false,
   isbn=false,
+  date=year,
 ]{biblatex}
 % helpers
 \renewcommand{\paragraph}[1]{\par\textbf{#1}\hskip.5em}
