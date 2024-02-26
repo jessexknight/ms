@@ -1,10 +1,11 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{ms}
-[2024/02/25 v0.1.2 Manuscript Class]
+[2024/02/25 v0.1.3 Manuscript Class]
 % options
 \RequirePackage{kvoptions}
 \SetupKeyvalOptions{family=ms,prefix=ms@}
 \DeclareStringOption[numeric-comp]{bibstyle}
+\DeclareStringOption[35mm]{margin}
 \DeclareBoolOption[false]{blind}
 \DeclareOption*{\PassOptionsToClass{\CurrentOption}{article}}
 \ExecuteOptions{}
@@ -12,7 +13,7 @@
 \ProcessOptions\relax
 \LoadClass{article}
 % spacing
-\RequirePackage[margin=35mm]{geometry} % TODO make class options
+\RequirePackage[margin=\ms@margin]{geometry}
 \setlength{\parskip}{1ex}
 \setlength{\parindent}{0ex}
 \setlength{\abovecaptionskip}{\medskipamount}
