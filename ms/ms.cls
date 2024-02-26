@@ -1,6 +1,6 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{ms}
-[2024/02/25 v0.1.0 Manuscript Class]
+[2024/02/25 v0.1.2 Manuscript Class]
 % options
 \RequirePackage{kvoptions}
 \SetupKeyvalOptions{family=ms,prefix=ms@}
@@ -53,10 +53,14 @@
   \meta@part{Authors}{\blind{\@author}}\medskip
   \meta@part{Date}{\@date}
   \xappendix
+  \renewcommand{\partname}{Appendix}
+  \renewcommand{\thepart}{\Alph{part}}
+  \renewcommand{\thesection}{\thepart.\arabic{section}}
   \refsection
-  \counterwithin{table}{section}
-  \counterwithin{figure}{section}
-  \counterwithin{equation}{section}
+  \counterwithin{section}{part}
+  \counterwithin{table}{part}
+  \counterwithin{figure}{part}
+  \counterwithin{equation}{part}
   \clearpage}
 % cover
 \newcommand{\address}[3][Submission of a manuscript to \emph{\@journal}]{%
