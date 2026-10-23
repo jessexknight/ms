@@ -44,7 +44,8 @@
 % maketitle
 \renewcommand{\maketitle}{%
   \clearpage\setcounter{page}{1}%
-  \meta@block
+  \if@twocolumn\onecolumn\meta@block\twocolumn
+  \else\meta@block\fi
   \clearpage}
 % appendix - TODO: option for part vs section
 \let\xappendix\appendix
